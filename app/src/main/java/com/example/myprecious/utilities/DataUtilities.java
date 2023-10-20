@@ -16,11 +16,11 @@ public class DataUtilities {
         return instance;
     }
 
-    public ArrayList<Episode> getArrayList() {
+    public ArrayList<Episode> getEpisodeArrayList() {
         return arrayList;
     }
 
-    public void setArrayList(ArrayList<Episode> arrayList) {
+    public void setEpisodeArrayList(ArrayList<Episode> arrayList) {
         this.arrayList = arrayList;
     }
 

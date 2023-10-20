@@ -53,4 +53,20 @@ public class Area implements Serializable {
         this.eastArea = eastArea;
         eastArea.westArea = this;
     }
+
+    public Area getNorthArea() {
+        return northArea;
+    }
+
+    public Area getSouthArea() {
+        return southArea;
+    }
+
+    public Area getWestArea() {
+        return westArea;
+    }
+
+    public Area getEastArea() {
+        return eastArea;
+    }
 }

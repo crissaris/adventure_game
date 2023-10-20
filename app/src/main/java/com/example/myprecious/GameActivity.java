@@ -39,9 +39,9 @@ public class GameActivity extends AppCompatActivity {
         continueButton = findViewById(R.id.button_continue);
 
         if(savedInstanceState == null){
-            Episode episode = DataUtilities.getInstance().getArrayList().get(0);
+            Episode episode = DataUtilities.getInstance().getEpisodeArrayList().get(0);
             if(episode != null) {
-                startTheGame(DataUtilities.getInstance().getArrayList().get(0));
+                startTheGame(DataUtilities.getInstance().getEpisodeArrayList().get(0));
             }
             else{
                 Toast.makeText(this, "Try to start the game again!!!", Toast.LENGTH_LONG).show();

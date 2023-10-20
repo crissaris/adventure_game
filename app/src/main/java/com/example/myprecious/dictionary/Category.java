@@ -3,6 +3,7 @@ package com.example.myprecious.dictionary;
 public enum Category {
 
     GO(1),
+    FIGHT(4),
     DIRECTION(2),
     TAKE(3),
     DROP(3),

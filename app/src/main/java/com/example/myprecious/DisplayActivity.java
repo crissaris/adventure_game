@@ -29,13 +29,13 @@ public class DisplayActivity extends AppCompatActivity {
         RelativeLayout relativeLayout = findViewById(R.id.displayLayout);
 
         if (savedInstanceState == null) {
-            showUp(DataUtilities.getInstance().getArrayList().get(0), relativeLayout);
+            showUp(DataUtilities.getInstance().getEpisodeArrayList().get(0), relativeLayout);
 
         }
 
         nextButton.setOnClickListener(v -> {
-            DataUtilities.getInstance().setArrayList(DataUtilities.getInstance().
-                    setEpisodeInArrayList(DataUtilities.getInstance().getArrayList().get(0)));
+            DataUtilities.getInstance().setEpisodeArrayList(DataUtilities.getInstance().
+                    setEpisodeInArrayList(DataUtilities.getInstance().getEpisodeArrayList().get(0)));
             GameUtilities.getInstance().openNewActivity(this, GameActivity.class);
             this.finish();
         });

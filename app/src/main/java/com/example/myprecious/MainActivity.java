@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void startNewGame() {
-        DataUtilities.getInstance().setArrayList(DataUtilities.getInstance().setEpisodeInArrayList(new TheFellowshipOfTheRing()));
+        DataUtilities.getInstance().setEpisodeArrayList(DataUtilities.getInstance().setEpisodeInArrayList(new TheFellowshipOfTheRing()));
         GameUtilities.getInstance().openNewActivity(this, DisplayActivity.class);
     }
 
