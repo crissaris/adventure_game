@@ -1,57 +1,36 @@
 package com.example.myprecious;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import com.example.myprecious.episodes.TheFellowshipOfTheRing;
-import com.example.myprecious.utilities.DataUtilities;
-import com.example.myprecious.utilities.GameUtilities;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+import com.example.myprecious.utilities.GameUtility;
 
-    Button newGameButton, loadGameButton, exitGameButton;
+public class MainActivity extends AppCompatActivity{
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        GameUtility.getInstance().setTheActivity(this);
         setContentView(R.layout.activity_main);
 
-        newGameButton = findViewById(R.id.new_game_button);
-        loadGameButton = findViewById(R.id.load_game_button);
-        exitGameButton = findViewById(R.id.exit_game_button);
-
-        newGameButton.setOnClickListener(this);
-        loadGameButton.setOnClickListener(this);
-        exitGameButton.setOnClickListener(this);
-
-
-    }
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.exit_game_button:
-                //save game first...
-                onBackPressed();
-                break;
-            case R.id.load_game_button:
-
-                break;
-            case R.id.new_game_button:
-                startNewGame();
-                break;
-
+        if(savedInstanceState == null){
+            loadFragment(new SplashFragment(new MainFragment(), R.drawable.splash_wallpaper));
         }
-    }
 
-    private void startNewGame() {
-        DataUtilities.getInstance().setEpisodeArrayList(DataUtilities.getInstance().setEpisodeInArrayList(new TheFellowshipOfTheRing()));
-        GameUtilities.getInstance().openNewActivity(this, DisplayActivity.class);
+
+    }
+    public void loadFragment(Fragment fragment) {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, fragment,
+                        fragment.getClass().getSimpleName()).addToBackStack(null).commit();
     }
 
     @Override
     public void onBackPressed(){
-        GameUtilities.getInstance().exitTheGame(this);
+        loadFragment(new MainFragment());
     }
 }

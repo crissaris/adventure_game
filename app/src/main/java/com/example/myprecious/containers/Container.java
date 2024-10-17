@@ -8,7 +8,7 @@ import com.example.myprecious.items.Item;
 import java.io.Serializable;
 import java.util.HashMap;
 
-public class Container implements Serializable {
+public class Container  {
 
     private String description;
     private int tonnage;
@@ -34,6 +34,7 @@ public class Container implements Serializable {
     public int getTonnage() {
         return tonnage;
     }
+
 
     public void setTonnage(int tonnage) {
         this.tonnage = tonnage;
