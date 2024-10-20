@@ -60,4 +60,10 @@ public class MagicalItem extends Item {
             super("precious", 1, R.drawable.one_ring, "the one Ring", 600);
         }
     }
+    // legolas
+    public static class ArrowRing extends MagicalItem {
+        public ArrowRing() {
+            super("arrow ring", 1, R.drawable.arrow_ring, "arrow ring", 100);
+        }
+    }
 }

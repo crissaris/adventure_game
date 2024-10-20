@@ -152,15 +152,36 @@ public class Actor {
     }
     public static class GandalfOlórin extends Actor {
         public GandalfOlórin() {
-            super("Gandalf", "Olórin", "Mithrandir", "Maiar", new MagicalItem.Narya(),
-                    new Item(), new Item(), new Container(), R.drawable.gandalf_face,
-                    R.drawable.gandalf, 500, 1000);
+            super("Gandalf", "Olórin", "Mithrandir", "Maiar",
+                    new MagicalItem.Narya(), new Item(), new Item(), new Container(),
+                    R.drawable.gandalf_face, R.drawable.gandalf, 500, 1000);
         }
     }
     public static class AragornSonOfArathorn extends Actor {
         public AragornSonOfArathorn() {
-            super("Aragorn", "Ranger of the North", "strider", "Men", new MagicalItem.RingOfBarahir(),
-                    new Item(), new Item(), new Container(),R.drawable.aragorn_face, R.drawable.aragorn, 300, 500);
+            super("Aragorn", "Ranger of the North", "strider", "Men"
+                    , new MagicalItem.RingOfBarahir(), new Item(), new Item(), new Container(),
+                    R.drawable.aragorn_face, R.drawable.aragorn, 300, 500);
+        }
+    }
+    public static class Legolas extends Actor {
+        public Legolas() {
+            super("Legolas", "Greenleaf", "Prince of the Woodland Realm",
+                    "Sindar Elf", new MagicalItem.ArrowRing(), new Item(), new Item(),
+                    new Container(), R.drawable.legolas_face, R.drawable.legolas, 500, 1000);
+        }
+    }
+    public static class SamwizeGamgee extends  Actor {
+        public SamwizeGamgee() {
+            super("Samwise", "Gamgee", "Brave", "Hobbit", new Item(),
+                    new Item(), new Item(), new Container(), R.drawable.samwize_face,
+                    R.drawable.samwize, 200, 400);
+        }
+    }
+    public static class BilboBaggins extends Actor {
+        public BilboBaggins() {
+            super("Bilbo", "Baggins", "Barrel rider", "Hobbit", new Item(), new Item(), new Item(),
+                    new Container(), R.drawable.bilbo_face, R.drawable.bilbo_baggins, 50,400);
         }
     }
 }
